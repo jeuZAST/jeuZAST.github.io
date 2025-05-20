@@ -1,1 +1,75 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Règles - ZAST Family Feud</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url("https://images.gem.cbc.ca/v1/synps-cbc/show/perso/cbc_family_feud_canada_ott_background_v05.jpg?impolicy=ott&im") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 40px 15px;
+    }
+    h1 {
+      color: gold;
+      text-shadow: 2px 2px 5px black;
+      margin-bottom: 30px;
+    }
+    .rules {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    .rules p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+    .rules span {
+      font-weight: bold;
+      color: gold;
+    }
+    .btnStart {
+      background-color: gold;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #003366;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(255, 215, 0, 0.7);
+    }
+    .btnStart:hover {
+      background-color: #0000cc;
+      color: gold;
+    }
+  </style>
+</head>
+<body>
 
+  <h1>Règles du Jeu - ZAST Family Feud</h1>
+
+  <div class="rules">
+    <p><span>1.</span> Il y a deux équipes. Chaque équipe a un porte-parole pour appuyer sur le buzzer.</p>
+    <p><span>2.</span> Pour buzzer, l'équipe 1 appuie sur <span>Q</span> et l'équipe 2 sur <span>P</span>.</p>
+    <p><span>3.</span> L'équipe qui buzz en premier peut répondre à la question.</p>
+    <p><span>4.</span> Si elle a raison, elle gagne un point. Sinon, elle ne gagne rien.</p>
+    <p><span>5.</span> Une fois la réponse choisie, on passe à la question suivante.</p>
+    <p><span>6.</span> Le premier à atteindre <span>10 points</span> gagne la partie.</p>
+    <p><span>7.</span> Si le temps est écoulé, aucun point n'est donné.</p>
+  </div>
+
+
+<!-- https://www.w3schools.com/jsref/event_onclick.asp -->
+  <button class="btnStart" onclick="location.href='game.html'">Commencer le jeu</button>
+
+</body>
+</html>
