@@ -136,27 +136,27 @@
   let questionsDejaUtilisees = new Set();
 
   const questions = [
-    {question: "Quelle est la capitale de la France ?", choix: ["Lyon", "Paris", "Marseille", "Nice"], reponse: "Paris"},
-    {question: "Quel est l'élément chimique dont le symbole est O ?", choix: ["Or", "Oxygène", "Osmium", "Plomb"], reponse: "Oxygène"},
-    {question: "Quel est le plus grand océan du monde ?", choix: ["Atlantique", "Arctique", "Pacifique", "Indien"], reponse: "Pacifique"},
-    {question: "Quel est l'animal national de l'Australie ?", choix: ["Koala", "Émeu", "Kangourou", "Dingo"], reponse: "Kangourou"},
-    {question: "Quelle est la monnaie de l'Espagne ?", choix: ["Franc", "Euro", "Dollar", "Livre"], reponse: "Euro"},
-    {question: "Quel est le plus grand pays du monde ?", choix: ["Canada", "Chine", "Russie", "États-Unis"], reponse: "Russie"},
-    {question: "Quel est le symbole chimique du fer ?", choix: ["Fe", "Fr", "Fi", "Ir"], reponse: "Fe"},
-    {question: "Quel est le plus long fleuve du monde ?", choix: ["Nil", "Amazone", "Mississippi", "Yangsté"], reponse: "Amazone"},
-    {question: "Combien de continents y a-t-il sur Terre ?", choix: ["Six", "Sept", "Huit", "Cinq"], reponse: "Sept"},
-    {question: "Quel est l'océan qui borde la côte ouest des États-Unis ?", choix: ["Atlantique", "Pacifique", "Indien", "Arctique"], reponse: "Pacifique"},
-    {question: "Quel est le plus haut point du monde ?", choix: ["Mont Blanc", "K2", "Everest", "Denali"], reponse: "Everest"},
-    {question: "En quelle année l'homme a-t-il marché sur la Lune pour la première fois ?", choix: ["1969", "1972", "1959", "1980"], reponse: "1969"},
-    {question: "Quelle est la planète la plus proche du Soleil ?", choix: ["Vénus", "Mars", "Mercure", "Terre"], reponse: "Mercure"},
-    {question: "Quelle langue est parlée au Brésil ?", choix: ["Espagnol", "Portugais", "Français", "Anglais"], reponse: "Portugais"},
-    {question: "Quelle est la fonction principale des globules rouges dans le sang?" , choix: ["Transporter l’oxygène", "Combattre les infections", "Coaguler le sang", "Produire des hormones"], reponse: "Transporter l’oxygène"},
-    {question: "Quel animal peut dormir en volant ?", choix: ["Chauve-souris", "Colibri", "Frégate", "Pélican"], reponse: "Frégate"}
-    {question: "Quel fruit a été le premier à être cultivé dans l’espace ?", choix: ["Fraise", "Tomate", "Salade", "Pois"], reponse: "Salade"},
-    {question: "Quel événement a déclenché la Première Guerre mondiale ?", choix: ["Le naufrage du Titanic", "L'assassinat de l'archiduc François-Ferdinand", "Le bombardement de Pearl Harbor", "L'invention de l'avion"], reponse :"Le naufrage du Titanic"},
-    {question: "Quel gaz les plantes absorbent-elles pour réaliser la photosynthèse ?", choix: ["L'oxygène", "L'hydrogène", "Azote", "Dioxyde de carbone"], reponse: "Dioxyde de carbone"},
-  ];
-
+  {question: "Quelle est la capitale de la France ?", choix: ["Lyon", "Paris", "Marseille", "Nice"], reponse: "Paris"},
+  {question: "Quel est l'élément chimique dont le symbole est O ?", choix: ["Or", "Oxygène", "Osmium", "Plomb"], reponse: "Oxygène"},
+  {question: "Quel est le plus grand océan du monde ?", choix: ["Atlantique", "Arctique", "Pacifique", "Indien"], reponse: "Pacifique"},
+  {question: "Quel est l'animal national de l'Australie ?", choix: ["Koala", "Émeu", "Kangourou", "Dingo"], reponse: "Kangourou"},
+  {question: "Quelle est la monnaie de l'Espagne ?", choix: ["Franc", "Euro", "Dollar", "Livre"], reponse: "Euro"},
+  {question: "Quel est le plus grand pays du monde ?", choix: ["Canada", "Chine", "Russie", "États-Unis"], reponse: "Russie"},
+  {question: "Quel est le symbole chimique du fer ?", choix: ["Fe", "Fr", "Fi", "Ir"], reponse: "Fe"},
+  {question: "Quel est le plus long fleuve du monde ?", choix: ["Nil", "Amazone", "Mississippi", "Yangsté"], reponse: "Amazone"},
+  {question: "Combien de continents y a-t-il sur Terre ?", choix: ["Six", "Sept", "Huit", "Cinq"], reponse: "Sept"},
+  {question: "Quel est l'océan qui borde la côte ouest des États-Unis ?", choix: ["Atlantique", "Pacifique", "Indien", "Arctique"], reponse: "Pacifique"},
+  {question: "Quel est le plus haut point du monde ?", choix: ["Mont Blanc", "K2", "Everest", "Denali"], reponse: "Everest"},
+  {question: "En quelle année l'homme a-t-il marché sur la Lune pour la première fois ?", choix: ["1969", "1972", "1959", "1980"], reponse: "1969"},
+  {question: "Quelle est la planète la plus proche du Soleil ?", choix: ["Vénus", "Mars", "Mercure", "Terre"], reponse: "Mercure"},
+  {question: "Quelle langue est parlée au Brésil ?", choix: ["Espagnol", "Portugais", "Français", "Anglais"], reponse: "Portugais"},
+  {question: "Quelle est la fonction principale des globules rouges dans le sang?" , choix: ["Transporter l’oxygène", "Combattre les infections", "Coaguler le sang", "Produire des hormones"], reponse: "Transporter l’oxygène"},
+  {question: "Quel animal peut dormir en volant ?", choix: ["Chauve-souris", "Colibri", "Frégate", "Pélican"], reponse: "Frégate"},
+  {question: "Quel fruit a été le premier à être cultivé dans l’espace ?", choix: ["Fraise", "Tomate", "Salade", "Pois"], reponse: "Salade"},
+  {question: "Quel événement a déclenché la Première Guerre mondiale ?", choix: ["Le naufrage du Titanic", "L'assassinat de l'archiduc François-Ferdinand", "Le bombardement de Pearl Harbor", "L'invention de l'avion"], reponse :"L'assassinat de l'archiduc François-Ferdinand"},
+  {question: "Quel gaz les plantes absorbent-elles pour réaliser la photosynthèse ?", choix: ["L'oxygène", "L'hydrogène", "Azote", "Dioxyde de carbone"], reponse: "Dioxyde de carbone"}
+];
+  
   const score1Elt = document.getElementById('score1');
   const score2Elt = document.getElementById('score2');
   const questionElt = document.getElementById('question');
