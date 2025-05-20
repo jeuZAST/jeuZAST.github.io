@@ -150,11 +150,11 @@
     {question: "En quelle année l'homme a-t-il marché sur la Lune pour la première fois ?", choix: ["1969", "1972", "1959", "1980"], reponse: "1969"},
     {question: "Quelle est la planète la plus proche du Soleil ?", choix: ["Vénus", "Mars", "Mercure", "Terre"], reponse: "Mercure"},
     {question: "Quelle langue est parlée au Brésil ?", choix: ["Espagnol", "Portugais", "Français", "Anglais"], reponse: "Portugais"},
-    {question: "Quelle est la fonction principale des globules rouges dans le sang?" , choix: ["Transporter l’oxygène", "Combattre les infections", "Coaguler le sang", "Produire des hormones"], reponse: "Transporter l’oxygène"}
+    {question: "Quelle est la fonction principale des globules rouges dans le sang?" , choix: ["Transporter l’oxygène", "Combattre les infections", "Coaguler le sang", "Produire des hormones"], reponse: "Transporter l’oxygène"},
     {question: "Quel animal peut dormir en volant ?", choix: ["Chauve-souris", "Colibri", "Frégate", "Pélican"], reponse: "Frégate"}
-    {question: "Quel fruit a été le premier à être cultivé dans l’espace ?", choix: ["Fraise", "Tomate", "Salade", "Pois"], reponse: "Salade"}
-    {question: "Quel événement a déclenché la Première Guerre mondiale ?", choix: ["Le naufrage du Titanic", "L'assassinat de l'archiduc François-Ferdinand", "Le bombardement de Pearl Harbor", "L'invention de l'avion"], reponse :"Le naufrage du Titanic"}
-    {question: "Quel gaz les plantes absorbent-elles pour réaliser la photosynthèse ?", choix: ["L'oxygène", "L'hydrogène", "Azote", "Dioxyde de carbone"], reponse: "Dioxyde de carbone"}
+    {question: "Quel fruit a été le premier à être cultivé dans l’espace ?", choix: ["Fraise", "Tomate", "Salade", "Pois"], reponse: "Salade"},
+    {question: "Quel événement a déclenché la Première Guerre mondiale ?", choix: ["Le naufrage du Titanic", "L'assassinat de l'archiduc François-Ferdinand", "Le bombardement de Pearl Harbor", "L'invention de l'avion"], reponse :"Le naufrage du Titanic"},
+    {question: "Quel gaz les plantes absorbent-elles pour réaliser la photosynthèse ?", choix: ["L'oxygène", "L'hydrogène", "Azote", "Dioxyde de carbone"], reponse: "Dioxyde de carbone"},
   ];
 
   const score1Elt = document.getElementById('score1');
@@ -176,7 +176,7 @@
     do {
       idx = Math.floor(Math.random() * questions.length);
     } while(questionsDejaUtilisees.has(idx));
-    return idx;5
+    return idx;
   }
 
   function reset() {
