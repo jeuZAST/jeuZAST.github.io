@@ -112,23 +112,28 @@
   </style>
 </head>
 <body>
+    <!-- Écran de compte à rebours -->
+    <div id="compte-a-rebours" style="display: none;">
+        <h1>Le jeu commence dans...</h1>
+        <div id="timer" style="font-size: 60px;">3</div>
+    </div>
 
-<h1>Quiz ZAST Family Feud</h1>
-<!--Le score des 2 équipe-->
-<div id="scoreboard">Équipe 1: <span id="score1">0</span> | Équipe 2: <span id="score2">0</span></div>
-<!--Les instruction-->
-<p class="instructions">
-  Pour buzzer, équipe 1 appuie sur <b>Q</b>, équipe 2 sur <b>P</b>. La première équipe à buzzer choisit une réponse.
-</p>
-<div id="question">Appuyez sur Q ou P pour buzzer et commencer.</div>
-<!--Info sur l'équipe qui joue et le temps-->
-<div id="tour"></div>
-<div id="temps"></div>
-<!--Button pour le choix réponse-->
-<div id="choix" style="display:none;"></div>
-<!--Button pour aller à la prochaine question-->
-<button id="suivant" disabled>Question suivante</button>
-
+<div id="contenu-centre">
+    <h1>Quiz ZAST Family Feud</h1>
+    <!--Le score des 2 équipe-->
+    <div id="scoreboard">Équipe 1: <span id="score1">0</span> | Équipe 2: <span id="score2">0</span></div>
+    <!--Les instruction-->
+    <p class="instructions">
+        Pour buzzer, équipe 1 appuie sur <b>Q</b>, équipe 2 sur <b>P</b>. La première équipe à buzzer choisit une réponse.
+        </p>
+        <div id="question">Appuyez sur Q ou P pour buzzer et commencer.</div>
+        <!--Info sur l'équipe qui joue et le temps-->
+        <div id="tour"></div>
+        <div id="temps"></div>
+        <!--Button pour le choix réponse-->
+        <div id="choix" style="display:none;"></div>
+        <!--Button pour aller à la prochaine question-->
+        <button id="suivant" disabled>Question suivante</button>
 <script>
   //Le score commence a 0
   let s1 = 0
@@ -304,6 +309,6 @@
 
   reset();
 </script>
-
+</div>
 </body>
 </html>
