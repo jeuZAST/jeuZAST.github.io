@@ -184,8 +184,10 @@
 
   //Cette fonction choisit un question aléatoire et qui n'a pas était utiliser
   function aleatoire() {
+// Vérifie si toutes les questions ont déjà été posées
     if (deja.size === liste.length) return null;
     let r;
+//Prend un nombre jusqu'a il retonbe sur une question déjas posée
     do {
       r = Math.floor(Math.random() * liste.length);
     } while(deja.has(r))
@@ -212,6 +214,7 @@
     id = setInterval(() => {
       reste--
       temps.textContent = "Temps restant : " + reste + "s"
+//Si le temps est à 0 arrête le timer
       if (reste <= 0) {
         clearInterval(id)
         temps.textContent = "Temps écoulé !"
@@ -238,16 +241,19 @@
   function verifie(c) {
     clearInterval(id)
     let bonne = liste[qIndex].reponse
+//Si la réponse est bonne
     if (c === bonne) {
       tour.textContent = "Correct ! Équipe " + equipe + " gagne 1 point"
       if (equipe === 1) s1++
       else s2++
       majScore()
+//Si la réponse est mauvaise
     } else {
       tour.textContent = "Faux ! La bonne réponse était " + bonne
     }
     choix.querySelectorAll('button').forEach(btn => btn.disabled = true)
     suivant.disabled = false
+//si une équipe atteint 10 points, elle gange
     if (s1 >= 10 || s2 >= 10) {
       setTimeout(() => {
         alert("Jeu terminé ! Équipe " + (s1 >= 10 ? 1 : 2) + " a gagné")
@@ -266,6 +272,7 @@
   //prépare la prochaine question
   function prochaine() {
     qIndex = aleatoire()
+//choisi une nouvelle question
     if (qIndex === null) {
       alert("Toutes les questions ont été posées. Merci d'avoir joué !")
       window.location.href = "index.html"
