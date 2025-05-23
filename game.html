@@ -181,32 +181,44 @@
     score1.textContent = s1
     score2.textContent = s2
   }
-
+  
   //Cette fonction choisit un question aléatoire et qui n'a pas était utiliser
   function aleatoire() {
-// Vérifie si toutes les questions ont déjà été posées
-    if (deja.size === liste.length) return null;
-    let r;
-//Prend un nombre jusqu'a il retonbe sur une question déjas posée
-    do {
-      r = Math.floor(Math.random() * liste.length);
-    } while(deja.has(r))
-    return r;
+    // Vérifie si toutes les questions ont déjà été posées
+  if (deja.size >= liste.length) {
+    return null; 
   }
+  //Prend un nombre jusqu'a il retombe sur une question déjas posée
+  let index
+  do {
+    index = Math.floor(Math.random() * liste.length);
+  } while (deja.has(index))
+  
+  return index
+}
 
   // reset tous les élément visuel pour la prochaine question
   function reset() {
-    equipe = null
-    tour.textContent = "Appuyez sur Q (Équipe 1) ou P (Équipe 2) pour buzzer";
-    temps.textContent = ""
-    choix.style.display = 'none'
-    choix.innerHTML = ''
-    suivant.disabled = true
-    clearInterval(id)
-    reste = 20
-    qText.textContent = "Appuyez sur Q ou P pour buzzer et commencer."
-    qIndex = null
+  equipe = null;
+  tour.textContent = "Appuyez sur Q (Équipe 1) ou P (Équipe 2) pour buzzer";
+  temps.textContent = ""
+  choix.style.display = 'none'
+  choix.innerHTML = ''
+  suivant.disabled = true
+  clearInterval(id)
+  reste = 20;
+
+  qIndex = aleatoire();
+  if (qIndex === null) {
+    alert("Toutes les questions ont été posées. Merci d'avoir joué !");
+    window.location.href = "index.html";
+    return;
   }
+  deja.add(qIndex);
+
+  // Affiche la question immédiatement
+  qText.textContent = liste[qIndex].question;
+}
 
   //Commence un décompte de 20 sec https://www.w3schools.com/js/js_timing.asp
   function timer() {
@@ -268,50 +280,29 @@
     suivant.disabled = false
     if (!succes) tour.textContent = "Temps écoulé, personne n'a pas répondu."
   }
-
-  //prépare la prochaine question
-  function prochaine() {
-    qIndex = aleatoire()
-//choisi une nouvelle question
-    if (qIndex === null) {
-      alert("Toutes les questions ont été posées. Merci d'avoir joué !")
-      window.location.href = "index.html"
-      return
-    }
-    deja.add(qIndex)
-    reset()
-  }
-
+  
   //Pour voir quelle lettre tu click p ou q https://www.w3schools.com/jsref/event_onkeypress.asp
   document.addEventListener('keydown', (e) => {
   //si un équipe a buzzé déja sa fait rien pour éviter que 2 équipebuzzent au même temps
-    if (equipe !== null) return
-//Quand q est pressée c'est équipe 1
-    if (e.key.toLowerCase() === 'q') equipe = 1
-//Quand p est pressée c'est équipe 2
-    else if (e.key.toLowerCase() === 'p') equipe = 2
-
-    if (equipe !== null) {
-// Si aucune question n’a encore été sélectionnée pour ce tour
-      if (qIndex === null) {
-// Sa choisi une question aléatoire parmi celles qui n’ont pas encore utilisées
-        qIndex = aleatoire()
-        if (qIndex === null) {
-          alert("Toutes les questions ont été posées.")
-          return
-        }
-        deja.add(qIndex)
-      }
-// Afficher le texte de la question sélectionnée
-      qText.textContent = liste[qIndex].question
-      tour.textContent = "Équipe " + equipe + " a buzzé ! Choisissez une réponse"
-      afficheChoix()
-      timer()
-    }
-  });
+  if (equipe !== null || qIndex === null) return
+  //Quand q est appuyer c'est équipe 1
+  if (e.key.toLowerCase() === 'q') {
+    equipe = 1
+  //Quand q est appuyer c'est équipe 1
+  } else if (e.key.toLowerCase() === 'p') {
+    equipe = 2
+  }
+  
+  // Si aucune question n’a encore été sélectionnée pour ce tour
+  if (equipe !== null) {
+    tour.textContent = "Équipe " + equipe + " a buzzé ! Choisissez une réponse";
+    afficheChoix()
+    timer()
+  }
+});
 
   //Quand tu click sur le boutton  suivante, tu passes à la prochaine question
-  suivant.addEventListener('click', prochaine)
+  suivant.addEventListener('click', reset)
 
   reset();
 </script>
